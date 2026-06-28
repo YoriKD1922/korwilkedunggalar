@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monitoring Presensi Korwil Sine</title>
+  <title>Monitoring Presensi Korwil Kedunggalar</title>
   <script>
   // ============================================================
   // ANTI-INSPECT / ANTI-COPY DETERRENT
@@ -44,7 +44,7 @@
     }, 1000);
 
     console.log('%c⚠ Peringatan', 'color:#ef4444;font-size:22px;font-weight:bold;');
-    console.log('%cAplikasi ini adalah milik Korwil Sine. Penyalinan / modifikasi tanpa izin tidak diperbolehkan.', 'font-size:12px;color:#475569;');
+    console.log('%cAplikasi ini adalah milik Korwil Kedunggalar. Penyalinan / modifikasi tanpa izin tidak diperbolehkan.', 'font-size:12px;color:#475569;');
   })();
   </script>
   <style>
@@ -153,12 +153,49 @@ const { useState, useEffect, useMemo, useRef } = React;
 
 
 const lembagaList = [
-  "SDN GENDOL 1","SDN GIRIKERTO 1","SDN GIRIKERTO 2","SDN HARGOSARI 1","SDN HARGOSARI 2",
-  "SDN JAGIR 1","SDN TULAKAN 4","SDN JAGIR 2","SDN KUNIRAN 3","SDN JAGIR 3","SDN JAGIR 4",
-  "SDN KAUMAN 1","SDN KETANGGUNG 1","SDN KUNIRAN 1","SDN KUNIRAN 2","SDN NGRENDENG 2",
-  "SDN SINE 1","SDN PANDANSARI","SDN POCOL","SDN SINE 3","SDN SUMBEREJO 1","SDN SUMBERSARI 1",
-  "SDN SUMBERSARI 2","SDN TULAKAN 1","SDN TULAKAN 2","SDN TULAKAN 3","SDN TULAKAN 6",
-  "SDN WONOSARI 1","SDN WONOSARI 2"
+  "SDN BANGUNREJO KIDUL 1",
+  "SDN BANGUNREJO KIDUL 2",
+  "SDN BANGUNREJO KIDUL 3",
+  "SDN BANGUNREJO KIDUL 4",
+  "SDN BANGUNREJO KIDUL 5",
+  "SDN BANGUNREJO KIDUL 7",
+  "SDN BANGUNREJO KIDUL 8",
+  "SDN BANGUNREJO KIDUL 9",
+  "SDN BEGAL 1",
+  "SDN GEMARANG 1",
+  "SDN GEMARANG 3",
+  "SDN GEMARANG 4",
+  "SDN GEMARANG 5",
+  "SDN GEMARANG 6",
+  "SDN GEMARANG 7",
+  "SDN JATIGEMBOL 1",
+  "SDN JATIGEMBOL 2",
+  "SDN JATIGEMBOL 5",
+  "SDN JENGGRIK 1",
+  "SDN JENGGRIK 2",
+  "SDN JENGGRIK 3",
+  "SDN JENGGRIK 4",
+  "SDN JENGGRIK 6",
+  "SDN KATIKAN 1",
+  "SDN KATIKAN 2",
+  "SDN KATIKAN 3",
+  "SDN KAWU 1",
+  "SDN KAWU 3",
+  "SDN KAWU 4",
+  "SDN KEDUNGGALAR 1",
+  "SDN KEDUNGGALAR 3",
+  "SDN KEDUNGGALAR 4",
+  "SDN KEDUNGGALAR 5",
+  "SDN KEDUNGGALAR 8",
+  "SDN PELANG KIDUL 1",
+  "SDN PELANG KIDUL 2",
+  "SDN PELANG KIDUL 3",
+  "SDN PELANG LOR 1",
+  "SDN PELANG LOR 2",
+  "SDN PELANG LOR 4",
+  "SDN WONOKERTO 1",
+  "SDN WONOKERTO 4",
+  "SDN WONOREJO 1"
 ];
 
 
@@ -395,7 +432,7 @@ const Login = ({ onLogin }) => {
             <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-blue-400/30">
               <i className="fas fa-fingerprint text-2xl text-white"></i>
             </div>
-            <h2 className="text-3xl font-black text-slate-800 tracking-tight">Korwil Sine</h2>
+            <h2 className="text-3xl font-black text-slate-800 tracking-tight">Korwil Kedunggalar</h2>
             <p className="text-slate-400 text-sm mt-1">Sistem Monitoring Presensi Digital</p>
           </div>
           <form onSubmit={submit} className="space-y-4">
@@ -429,7 +466,7 @@ const Login = ({ onLogin }) => {
             <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-indigo-400 blur-3xl"></div>
           </div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Lambang_Kabupaten_Ngawi_%28svg%29.svg/1280px-Lambang_Kabupaten_Ngawi_%28svg%29.svg.png" alt="Logo Ngawi" className="w-36 h-36 object-contain mb-7 drop-shadow-2xl relative" onError={e=>{e.target.onerror=null;e.target.src='https://via.placeholder.com/200?text=Logo'}} />
-          <h3 className="text-3xl font-black text-center leading-tight relative">Monitoring Presensi<br/><span className="text-blue-300">Korwil Sine</span></h3>
+          <h3 className="text-3xl font-black text-center leading-tight relative">Monitoring Presensi<br/><span className="text-blue-300">Korwil Kedunggalar</span></h3>
           <p className="text-sm text-blue-200 text-center mt-3 relative">Dinas Pendidikan Kabupaten Ngawi</p>
           <div className="mt-6 flex gap-2 text-xs bg-white/15 py-2.5 px-5 rounded-full border border-white/20 relative">
             <i className="fas fa-calendar-check text-blue-200"></i>
@@ -1401,7 +1438,7 @@ const MonitoringExport = ({ presensiData, ijinData, pegawaiData, refreshData, us
 
   const generateLaporanPDF = () => {
     const {jsPDF}=window.jspdf, doc=new jsPDF('l','mm','a4'), fd=getFiltered();
-    doc.setFontSize(18);doc.setTextColor(30,41,59);doc.text('Laporan Monitoring Presensi Korwil Sine',14,15);
+    doc.setFontSize(18);doc.setTextColor(30,41,59);doc.text('Laporan Monitoring Presensi Korwil Kedunggalar',14,15);
     doc.setFontSize(10);doc.setTextColor(100);doc.text(`Dicetak: ${new Date().toLocaleString('id-ID')}`,14,22);
     let y=28; doc.text(flLem?`Lembaga: ${flLem}`:'Lembaga: Semua (per lembaga)',14,y); y+=5;
     if(dStart&&dEnd) doc.text(`Periode: ${parseIjinDate(dStart)} - ${parseIjinDate(dEnd)}`,14,y); y+=8;
@@ -2081,7 +2118,7 @@ const JadwalAcara = ({ userRole, username, pegawaiData, refreshData }) => {
             <div className="overflow-y-auto flex-1 p-4 sm:p-6 modal-body space-y-4">
               <div>
                 <label className={lCls}>Nama Acara <span className="text-red-400">*</span></label>
-                <input type="text" value={fd.namaAcara} onChange={e=>setFd({...fd,namaAcara:e.target.value})} className={iCls} placeholder="Contoh: Rapat Koordinasi KKG Kecamatan Sine" />
+                <input type="text" value={fd.namaAcara} onChange={e=>setFd({...fd,namaAcara:e.target.value})} className={iCls} placeholder="Contoh: Rapat Koordinasi KKG Kecamatan Kedunggalar" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div><label className={lCls}>Tanggal Mulai <span className="text-red-400">*</span></label><input type="date" value={fd.tanggalMulai} onChange={e=>setFd({...fd,tanggalMulai:e.target.value})} className={iCls} /></div>
@@ -2351,7 +2388,7 @@ const App = () => {
             <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center overflow-hidden border border-white/20 flex-shrink-0">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Lambang_Kabupaten_Ngawi_%28svg%29.svg/1280px-Lambang_Kabupaten_Ngawi_%28svg%29.svg.png" alt="Logo" className="w-full h-full object-cover" onError={e=>{e.target.onerror=null;e.target.src='https://via.placeholder.com/40?text=L';}} />
             </div>
-            <div><div className="font-black text-sm tracking-tight">KORWIL SINE</div><div className="text-[9px] text-blue-300/70 font-bold uppercase tracking-widest">Monitoring Presensi</div></div>
+            <div><div className="font-black text-sm tracking-tight">KORWIL Kedunggalar</div><div className="text-[9px] text-blue-300/70 font-bold uppercase tracking-widest">Monitoring Presensi</div></div>
           </div>
         </div>
         {/* Nav */}
@@ -2488,7 +2525,7 @@ const App = () => {
                   {/* Badge */}
                   <div className="badge-float" style={{display:'flex',alignItems:'center',gap:'8px',background:'linear-gradient(135deg,rgba(239,246,255,.9),rgba(238,242,255,.9))',backdropFilter:'blur(8px)',border:'1px solid rgba(147,197,253,.6)',borderRadius:'14px',padding:'10px 20px',boxShadow:'0 4px 20px rgba(59,130,246,.12),0 1px 4px rgba(0,0,0,.05)'}}>
                     <i className="fa-utility-duo fa-semibold fa-airplay" style={{fontSize:'14px',color:'#3b82f6'}}></i>
-                    <span style={{fontSize:'11px',color:'#2563eb',fontWeight:700,letterSpacing:'.8px'}}>MONITORING PRESENSI KORWIL SINE</span>
+                    <span style={{fontSize:'11px',color:'#2563eb',fontWeight:700,letterSpacing:'.8px'}}>MONITORING PRESENSI KORWIL Kedunggalar</span>
                   </div>
 
                 </div>
@@ -2517,7 +2554,7 @@ const App = () => {
               <div className="flex items-center gap-3">
                 <span className="flex items-center gap-1">
                   <i className="fas fa-school text-slate-300"></i>
-                  Korwil Sine &bull; Dinas Pendidikan Kab. Ngawi
+                  Korwil Kedunggalar &bull; Dinas Pendidikan Kab. Ngawi
                 </span>
                 <span className="hidden sm:inline text-slate-200">|</span>
                 <span className="flex items-center gap-1 font-semibold text-blue-400">
